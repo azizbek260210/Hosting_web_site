@@ -26,14 +26,15 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        try:
+        # try:
             models.Contact.objects.create(
                 name=request.POST['name'],
                 phone=request.POST['phone'],
                 email=request.POST['email'],
-                body=request.POST['message'],)
-        except:
-            ...
+                message=request.POST['message'],
+                )
+        # except:
+        #     ...
     return render(request, 'contact.html')
 
 
